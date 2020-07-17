@@ -12,11 +12,11 @@ ReactDOM.render(
 );
 
 setTimeout(() => {
-  reduxStore.dispatch({ type: 'any', payload: { reduxNum: 777 } });
+  reduxStore.dispatch({ type: 'force', payload: { reduxNum: 7777 } });
 }, 500);
 setTimeout(() => {
-  reduxStore.dispatch({ type: 'any', payload: { reduxStr: 'Hello' } });
+  reduxStore.dispatch({ type: 'force', payload: { reduxStr: 'Hello' } });
 }, 1000);
 setTimeout(() => {
-  reduxStore.dispatch({ type: 'any', payload: { reduxStr: 'Redux' } });
+  reduxStore.dispatch({ type: 'force', payload: { reduxStr: 'Redux' } });
 }, 1500);

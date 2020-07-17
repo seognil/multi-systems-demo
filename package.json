@@ -1,12 +1,17 @@
 {
   "scripts": {
-    "start": "parcel",
+    "manually-1": "ts-node ./demo/1-state-core/manually.ts",
     "backbone-1": "ts-node ./demo/1-state-core/backbone.ts",
     "redux-1": "ts-node ./demo/1-state-core/redux.ts",
+    "manually-2": "parcel ./demo/2-with-render/manually/index.html",
     "backbone-2": "parcel ./demo/2-with-render/backbone/index.html",
     "redux-2": "parcel ./demo/2-with-render/redux/index.html",
+    "manually-3": "parcel ./demo/3-with-state-changing/manually/index.html",
     "backbone-3": "parcel ./demo/3-with-state-changing/backbone/index.html",
-    "redux-3": "parcel ./demo/3-with-state-changing/redux/index.html"
+    "redux-3": "parcel ./demo/3-with-state-changing/redux/index.html",
+    "sync-1": "ts-node ./demo/4-syncing-state/redux-manually",
+    "sync-2": "ts-node ./demo/4-syncing-state/redux-backbone",
+    "sync-3": "ts-node ./demo/4-syncing-state/with-rxjs"
   },
   "dependencies": {
     "backbone": "^1.4.0",

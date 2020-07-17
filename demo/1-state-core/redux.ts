@@ -1,27 +1,25 @@
 import { createStore } from 'redux';
 
-// * ---------------- 状态仓库
+// * ---------------- 状态仓库（Redux）
 
 type ReduxState = {
   reduxNum?: number;
   reduxStr?: string;
 };
 
-const ReduxStore = createStore(
+const reduxStore = createStore(
   (s: ReduxState, a: { type: string; payload: ReduxState }) => ({ ...s, ...a.payload }),
   {},
 );
 
-// * ---------------- 业务部分
+// * ---------------- 业务部分（Redux.subscribe 监听）
 
-(() => {
-  console.warn('redux init:', ReduxStore.getState());
+console.log('redux init:', reduxStore.getState());
 
-  ReduxStore.subscribe(() => {
-    console.warn('redux updated:', ReduxStore.getState());
-  });
+reduxStore.subscribe(() => {
+  console.log('redux updated:', reduxStore.getState());
+});
 
-  ReduxStore.dispatch({ type: 'force', payload: { reduxNum: 777 } });
-  ReduxStore.dispatch({ type: 'force', payload: { reduxStr: 'Hello' } });
-  ReduxStore.dispatch({ type: 'force', payload: { reduxStr: 'Redux' } });
-})();
+reduxStore.dispatch({ type: 'merge', payload: { reduxNum: 7777 } });
+reduxStore.dispatch({ type: 'merge', payload: { reduxStr: 'Hello' } });
+reduxStore.dispatch({ type: 'merge', payload: { reduxStr: 'Redux' } });

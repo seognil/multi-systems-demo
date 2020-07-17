@@ -1,6 +1,6 @@
 import Backbone from 'backbone';
 
-// * ---------------- 状态仓库
+// * ---------------- 状态仓库（Backbone）
 
 type BoneState = {
   boneNum?: number;
@@ -9,18 +9,16 @@ type BoneState = {
 
 class MyModel extends Backbone.Model<BoneState> {}
 
-const model = new MyModel();
+const boneModel = new MyModel();
 
-// * ---------------- 业务部分
+// * ---------------- 业务部分（Backbone.on 监听）
 
-(() => {
-  console.log('backbone init:', model.attributes);
+console.log('backbone init:', boneModel.attributes);
 
-  model.on('change', () => {
-    console.log('backbone updated:', model.attributes);
-  });
+boneModel.on('change', () => {
+  console.log('backbone updated:', boneModel.attributes);
+});
 
-  model.set('boneNum', 666);
-  model.set('boneStr', 'Hello');
-  model.set('boneStr', 'Backbone');
-})();
+boneModel.set({ boneNum: 666 });
+boneModel.set({ boneStr: 'Hello' });
+boneModel.set({ boneStr: 'Backbone' });
