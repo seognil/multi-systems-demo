@@ -1,0 +1,67 @@
+html,
+body,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+
+  #mix-app {
+    display: flex;
+    flex-grow: 1;
+
+    & > * > b {
+      display: block;
+      line-height: 2em;
+      border-bottom: 1px solid black;
+      margin-bottom: 10px;
+    }
+
+    #s1 {
+      padding: 10px;
+      width: 30%;
+      margin-right: 10px;
+      border: 1px solid hsla(0, 0%, 0%, 0.5);
+
+      .sidebar-item {
+        border: 1px solid hsla(0, 0%, 0%, 0.5);
+        padding: 5px;
+        margin-bottom: 5px;
+      }
+    }
+    #s2 {
+      padding: 10px;
+      border: 1px solid hsla(0, 0%, 0%, 0.5);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+
+      #main {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+
+        #canvas {
+          flex-grow: 1;
+          border: 2px dashed hsla(0, 0%, 0%, 0.5);
+          margin-top: 10px;
+
+          p {
+            padding: 2px;
+          }
+        }
+      }
+    }
+  }
+}
