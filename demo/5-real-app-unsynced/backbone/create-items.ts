@@ -22,7 +22,6 @@ export const createEmptyImg = async (): Promise<ImgData> => {
 };
 
 export const createEmptyText = async (): Promise<TextData> => {
-  console.warn('lcdebug 17eb12', 'shit');
   const id = await fakeAsyncGenId();
   const data: TextData = {
     id,

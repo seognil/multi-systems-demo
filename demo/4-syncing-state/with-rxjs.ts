@@ -13,10 +13,10 @@ type MappedReceivers<T extends Object, D> = {
   [K in keyof T]: T[K] extends Subject<infer P> ? Observable<[P, D]> : never;
 };
 
-const zipTriggersWithPass = <T, D>(triggers: T, Pass$: Observable<D>): MappedReceivers<T, D> => {
+const zipTriggersWithPass = <T, D>(triggers: T, pass$: Observable<D>): MappedReceivers<T, D> => {
   // * Just need the type notation, so ...
   // @ts-ignore
-  return mapObjIndexed((v) => v.pipe(withLatestFrom(Pass$)), triggers);
+  return mapObjIndexed((v) => v.pipe(withLatestFrom(pass$)), triggers);
 };
 
 /*

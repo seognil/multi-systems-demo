@@ -7,6 +7,7 @@ import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautif
 
 import { ItemData } from '../types';
 import { MyReduxState, MyReduxAction } from './store';
+import { ReduxTriggers } from '../syncing/redux-triggers';
 
 // * ------------------------------------------------
 
@@ -44,7 +45,11 @@ export const App: React.FC = () => {
     const { destination: dest, source } = result;
     if (!dest || dest.index === source.index) return;
     const nextItems = getReorderItems(items, source.index, dest.index);
-    dispatch({ type: 'force', items: nextItems });
+
+    // dispatch({ type: 'force', items: nextItems });
+
+    // * 将直接数据变更，改向 stream
+    ReduxTriggers.reorder$.next(nextItems);
   };
 
   return (

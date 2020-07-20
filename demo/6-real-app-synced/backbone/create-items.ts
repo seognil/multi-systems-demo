@@ -1,8 +1,9 @@
+import { nanoid } from 'nanoid';
 import { ImgData, TextData } from '../types';
 
 const fakeAsyncGenId = () =>
   new Promise<string>((res) => {
-    const id = `${Date.now()}`;
+    const id = nanoid(6);
     setTimeout(() => {
       res(id);
     }, 50);
@@ -22,12 +23,11 @@ export const createEmptyImg = async (): Promise<ImgData> => {
 };
 
 export const createEmptyText = async (): Promise<TextData> => {
-  console.warn('lcdebug 17eb12', 'shit');
   const id = await fakeAsyncGenId();
   const data: TextData = {
     id,
     type: 'text',
-    content: `文本_${randStr(6)}`,
+    content: `文本_${id}`,
   };
   return data;
 };

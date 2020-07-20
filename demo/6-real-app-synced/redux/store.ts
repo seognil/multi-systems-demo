@@ -8,12 +8,7 @@ export type MyReduxState = {
 export type MyReduxAction = { type: 'force'; items: ItemData[] };
 
 const defState: MyReduxState = {
-  items: [
-    { id: '1', type: 'img', src: '' },
-    { id: '2', type: 'img', src: '' },
-    { id: '3', type: 'text', content: '' },
-    { id: '4', type: 'text', content: '' },
-  ],
+  items: [],
 };
 
 const reducer: Reducer<MyReduxState, MyReduxAction> = (s = defState, a) =>
