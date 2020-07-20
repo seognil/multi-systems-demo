@@ -29,6 +29,7 @@ export class MyBoneView extends Backbone.View<MyBoneModel> {
       'click .clearItems': 'clearItems',
     };
   }
+
   addImg() {
     this.model.addItem('img');
   }
@@ -38,10 +39,7 @@ export class MyBoneView extends Backbone.View<MyBoneModel> {
   clearItems() {
     this.model.clearAll();
   }
-  delImg() {
-    // @ts-ignore
-    this.model.delItem(window.selectedItemId);
-  }
+
   render() {
     const heading = headingTemp({ title: this.model.get('title') });
     const items = this.model.get('items').map((e) => (e.type === 'img' ? imgTemp(e) : textTemp(e)));
