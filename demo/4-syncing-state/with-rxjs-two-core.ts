@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import Backbone from 'backbone';
-import { withLatestFrom } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { withLatestFrom } from 'rxjs/operators';
 
 // * -------------------------------- store
 

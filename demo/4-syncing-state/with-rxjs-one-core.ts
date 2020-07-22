@@ -1,6 +1,6 @@
-import { withLatestFrom } from 'rxjs/operators';
 import { createStore } from 'redux';
 import { Subject } from 'rxjs';
+import { withLatestFrom } from 'rxjs/operators';
 
 // * -------------------------------- store
 
@@ -21,7 +21,6 @@ outer$.subscribe(updateStore);
 store.subscribe(() => end$.next(store.getState()));
 
 const realEnd$ = inner$.pipe(withLatestFrom(end$));
-
 realEnd$.subscribe((e) => console.log('real end triggered', e));
 
 // * -------------------------------- try it
