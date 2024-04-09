@@ -21,7 +21,7 @@
 
 ## Demo 目录
 
-演示用 Live Demo：<https://seognil-study.github.io/multi-systems-demo/>
+演示用 Live Demo：<https://seognil.github.io/multi-systems-demo/>
 
 我写了一些 Demo，循序渐进地搭建一个 Backbone + Redux 双系统状态同步的 App。
 
